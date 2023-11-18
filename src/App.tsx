@@ -1,8 +1,11 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import logo from "./logo.svg";
+import "./App.css";
+import useCurrentUser from "./hooks/useCurrentUser";
 
 function App() {
+  const user = useCurrentUser();
+
   return (
     <div className="App">
       <header className="App-header">
