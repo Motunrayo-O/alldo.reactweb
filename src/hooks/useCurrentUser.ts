@@ -1,5 +1,5 @@
 const useCurrentUser = () => {
-  return null;
+  return "<Current User>";
 };
 
 export default useCurrentUser;
