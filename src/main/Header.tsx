@@ -1,6 +1,6 @@
 import React from "react";
 import logo from "./AlldoLogo.jpg";
-import { HStack, Image, Heading, Text } from "@chakra-ui/react";
+import { Flex, Image, Heading, Text, Spacer, HStack } from "@chakra-ui/react";
 
 interface Props {
   currentUser: string;
@@ -8,11 +8,19 @@ interface Props {
 
 const Header = ({ currentUser }: Props) => {
   return (
-    <HStack spacing={4}>
+    <Flex>
       <Image src={logo} alt="Alldo Logo" boxSize="100px" borderRadius="full" />
-      <Heading>AllDo Productivity</Heading>
-      <Text>{currentUser}</Text>
-    </HStack>
+      <Spacer />
+      <HStack>
+        <Heading className="core-text mt-5">AllDo Productivity</Heading>
+      </HStack>
+      <Spacer />
+      <HStack>
+        <Text decoration="underline" className="core-text mx-2 mt-10">
+          {currentUser}
+        </Text>
+      </HStack>
+    </Flex>
   );
 };
 
