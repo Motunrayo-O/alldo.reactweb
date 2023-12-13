@@ -1,9 +1,10 @@
 import React from "react";
 import logo from "./AlldoLogo.jpg";
 import { Flex, Image, Heading, Text, Spacer, HStack } from "@chakra-ui/react";
+import { User } from "../entities/taskEntities";
 
 interface Props {
-  currentUser: string;
+  currentUser: User;
 }
 
 const Header = ({ currentUser }: Props) => {
@@ -17,7 +18,7 @@ const Header = ({ currentUser }: Props) => {
       <Spacer />
       <HStack>
         <Text decoration="underline" className="core-text mx-2 mt-10">
-          {currentUser}
+          {currentUser.name}
         </Text>
       </HStack>
     </Flex>

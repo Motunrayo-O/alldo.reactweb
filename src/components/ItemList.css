@@ -1,0 +1,12 @@
+.item {
+    border-radius: 5;
+}
+
+/* .item:hover {
+    background-color: yellow;
+} */
+
+.item[selected] {
+    background-color: pink;
+}
+

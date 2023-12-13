@@ -13,8 +13,6 @@ import {
   Stack,
 } from "@chakra-ui/react";
 import { BsBugFill } from "react-icons/bs";
-import React from "react";
-import { reduceEachLeadingCommentRange } from "typescript";
 
 const BugForm = () => {
   let parentId = 5;

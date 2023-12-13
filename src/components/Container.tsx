@@ -1,21 +1,10 @@
-import { Grid, GridItem, Stack } from "@chakra-ui/react";
-import React from "react";
+import { Grid, GridItem } from "@chakra-ui/react";
 import ItemList from "./ItemList";
 import BugForm from "./BugForm";
+import useTasks from "../hooks/useTasks";
 
 const Container = () => {
-  let unfinishedItems = [
-    "Buy milk",
-    "Add margin",
-    "Cook Peanuts",
-    "Collect Child",
-  ];
-
-  let completedItems = [
-    "Phone president",
-    "Call Tyrone",
-    "Pick up your feelings",
-  ];
+  const allTasks = useTasks();
   return (
     <Grid
       m={2}
@@ -27,14 +16,14 @@ const Container = () => {
     >
       <GridItem bg="orange.100" area={"unfinished"}>
         <ItemList
-          items={unfinishedItems}
+          items={allTasks.filter((t) => !t.isCompleted)}
           title="Unfinished Items"
           iconType="Unfinished"
         />
       </GridItem>
       <GridItem bg="pink.100" area={"completed"}>
         <ItemList
-          items={completedItems}
+          items={allTasks.filter((t) => t.isCompleted)}
           title="Completed Items"
           iconType="Completed"
         />
