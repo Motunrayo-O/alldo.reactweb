@@ -18,8 +18,8 @@ const ItemList = ({ items, title, iconType }: Props) => {
         {items.map((it) => (
           <ListItem>
             <ListIcon
-              as={iconType == "Unfinished" ? BsInboxFill : BsPatchCheck}
-              color={iconType == "Unfinished" ? "purple.500" : "green.500"}
+              as={iconType === "Unfinished" ? BsInboxFill : BsPatchCheck}
+              color={iconType === "Unfinished" ? "purple.500" : "green.500"}
             />
             {it}
           </ListItem>

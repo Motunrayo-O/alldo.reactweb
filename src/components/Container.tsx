@@ -1,6 +1,7 @@
 import { Grid, GridItem, Stack } from "@chakra-ui/react";
 import React from "react";
 import ItemList from "./ItemList";
+import BugForm from "./BugForm";
 
 const Container = () => {
   let unfinishedItems = [
@@ -22,6 +23,7 @@ const Container = () => {
       templateAreas={`"unfinished input"
                         "completed input"`}
       gap="2"
+      gridTemplateColumns={"1fr 450px"}
     >
       <GridItem bg="orange.100" area={"unfinished"}>
         <ItemList
@@ -38,7 +40,7 @@ const Container = () => {
         />
       </GridItem>
       <GridItem bg="green.300" area={"input"}>
-        input
+        <BugForm />
       </GridItem>
     </Grid>
   );
