@@ -1,4 +1,8 @@
+import { useEffect, useState } from "react";
 import { TodoTask } from "../entities/taskEntities";
+import APIClient from "../services/api-client";
+
+const apiClientInstance = new APIClient<TodoTask>("/todos");
 
 const useTasks = () => {
   let allTasks: TodoTask[] = [
@@ -55,7 +59,20 @@ const useTasks = () => {
     },
   ];
 
-  return allTasks;
+  const [tasks, setTasks] = useState<TodoTask[]>([]);
+
+  useEffect(() => {
+    const controller = new AbortController();
+    apiClientInstance.fetchData({ signal: controller.signal }).then((res) => {
+      setTasks(res);
+    });
+
+    return () => controller.abort();
+  }, []);
+
+  // return allTasks;
+
+  return { tasks };
 };
 
 export default useTasks;

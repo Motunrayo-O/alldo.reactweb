@@ -4,7 +4,8 @@ import BugForm from "./BugForm";
 import useTasks from "../hooks/useTasks";
 
 const Container = () => {
-  const allTasks = useTasks();
+  const { tasks: allTasks } = useTasks();
+
   return (
     <Grid
       m={2}
